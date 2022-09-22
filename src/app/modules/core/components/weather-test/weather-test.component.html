@@ -1,0 +1,15 @@
+<h1>Chat App Testing Api</h1>
+<div>
+  <table>
+    <tr>
+      <th>Date</th>
+      <th>Temperature/C</th>
+      <th>Summary</th>
+    </tr>
+    <tr *ngFor="let weather of weathers" style="text-align: center;">
+      <td>{{weather.date |  date:'mediumDate' }}</td>
+      <td>{{weather.temperatureC}}</td>
+      <td>{{weather.summary}}</td>
+    </tr>
+  </table>
+</div>
