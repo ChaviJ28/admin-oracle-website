@@ -4,6 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './modules/core/core.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SharedModule } from './modules/shared/shared.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DashboardModule } from './modules/dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +16,10 @@ import { CoreModule } from './modules/core/core.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CoreModule
+    CoreModule,
+    NgbModule,
+    SharedModule,
+    BrowserAnimationsModule,
   ],
   bootstrap: [AppComponent]
 })

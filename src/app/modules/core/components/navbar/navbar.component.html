@@ -1,0 +1,36 @@
+<div class="sidebar" [ngClass]="{ 'expanded': isExpanded }">
+    <div class="header">
+      <h1 class="title"  >
+        Dashboard
+      </h1>
+      
+      <div class="toggle" >
+        <button mat-icon-button (click)="handleSidebarToggle()">
+        <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="link">
+        <div class="content" routerLink="/home">
+          <div class="title">Candidates</div>
+        </div>
+      </div>
+      <div class="link">
+        <div class="content"  [routerLink]="['test']">
+          <div class="title">Jobs</div>
+        </div>
+      </div>
+      <div class="link">
+        <div class="content"  [routerLink]="['/dashboard']">
+          <div class="title">Skills</div>
+        </div>
+      </div>
+      <div class="link">
+        <div class="content"  [routerLink]="['/home']">
+          <div class="title">Logout</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer"></div>
+  </div>

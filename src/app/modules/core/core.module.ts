@@ -5,21 +5,27 @@ import { SpinnerInterceptor } from './interceptors/spinner.interceptor';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { WeatherTestComponent } from './components/weather-test/weather-test.component';
 import { SharedModule } from '../shared/shared.module';
-
-
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import { TestComponent } from './components/test/test.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     SpinnerComponent,
-    WeatherTestComponent
+    WeatherTestComponent,
+    TestComponent,
+    NavbarComponent
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    MatToolbarModule,
   ],
   exports: [
     SpinnerComponent,
-    WeatherTestComponent
+    WeatherTestComponent,
+    NavbarComponent
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptor, multi: true}

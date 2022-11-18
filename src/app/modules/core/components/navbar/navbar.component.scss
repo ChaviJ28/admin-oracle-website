@@ -1,0 +1,137 @@
+.chevron::before {
+    border-style: solid;
+    border-width: 0.15em 0.15em 0 0;
+    display: inline-block;
+    height: 0.35em;
+    left: 0.15em;
+    position: relative;
+    top: 0.3em;
+    vertical-align: top;
+    width: 0.35em;
+  }
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+  
+    height: 100vh;
+    transition: 0.3s;
+  
+    width: 60px;
+    &.expanded {
+      width: 200px;
+  
+      .header {
+        h1 {
+          margin-left: 0px;
+        }
+        .chevron {
+          margin-left: 0px;
+          &::before {
+            transform: rotate(-135deg);
+          }
+        }
+      }
+      .content {
+        .link {
+          .content {
+            .title {
+              max-width: 120px;
+            }
+          }
+        }
+      }
+    }
+  
+    background: #f1f1f1;
+    color: #b2b3b8;
+  
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+  
+      background: #f1f1f1;
+  
+      h1 {
+        font-size: 20px;
+        color: #6d6e7e;
+        margin: 0;
+        flex: 1;
+        transition: 0.3s;
+  
+        margin-left: -120px;
+      }
+  
+      .chevron {
+        color: #6d6e7e;
+        cursor: pointer;
+        transition: 0.3s;
+        padding: 10px;
+        font-size: 30px;
+        text-align: center;
+  
+        &::before {
+          transition: 0.3s;
+          transform: rotate(45deg);
+        }
+  
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  
+    .content {
+      .link {
+        .children {
+          .content {
+            background: #27283a;
+            // padding-left: 30px;
+            padding-left: 10px;
+  
+            &.active {
+              background: #191a27;
+            }
+          }
+        }
+        .content {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 10px;
+  
+          cursor: pointer;
+  
+          transition: 0.3s;
+  
+          &:hover {
+            background: #ffffff;
+            .title {
+              color: rgb(37, 37, 37);
+            }
+          }
+  
+          &.active {
+            background: #ffffff;
+            .title {
+              color: rgb(37, 37, 37);
+            }
+          }
+          .title {
+            flex: 1;
+            color: #6d6e7e;
+            transition: 0.3s;
+            max-width: 0px;
+            overflow: hidden;
+          }
+        }
+      }
+    }
+  }
+
+  button {
+    border: none;
+  }
+  

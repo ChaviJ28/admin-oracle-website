@@ -15,9 +15,7 @@ export class WeatherTestComponent implements OnInit,OnDestroy {
   constructor(private api: TestApiService) { }
 
   ngOnInit() {
-   this.subWeather = this.api.getWeatherdata().subscribe(
-      data => this.weathers = data
-    );
+
   }
 
   ngOnDestroy() {

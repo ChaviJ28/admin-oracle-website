@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Tttr-ChatApp-Web": {
+    "Template": {
       "projectType": "application",
       "schematics": {
         "schematics": {
@@ -43,6 +43,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -84,10 +85,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Tttr-ChatApp-Web:build:production"
+              "browserTarget": "Template:build:production"
             },
             "development": {
-              "browserTarget": "Tttr-ChatApp-Web:build:development"
+              "browserTarget": "Template:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -95,7 +96,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Tttr-ChatApp-Web:build"
+            "browserTarget": "Template:build"
           }
         },
         "test": {
@@ -111,6 +112,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
