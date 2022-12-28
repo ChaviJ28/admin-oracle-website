@@ -1,36 +1,88 @@
 <div class="sidebar" [ngClass]="{ 'expanded': isExpanded }">
-    <div class="header">
-      <h1 class="title"  >
-        Dashboard
-      </h1>
-      
-      <div class="toggle" >
-        <button mat-icon-button (click)="handleSidebarToggle()">
+  <div class="header">
+    <div class="content" (click)="handleSidebarToggle()">
+      <img src="assets/icons/logo/oracle/white_1.svg" width="75px" alt="" srcset="">
+    </div>
+
+    <!-- <div class="toggle">
+      <button mat-icon-button (click)="handleSidebarToggle()">
         <mat-icon>menu</mat-icon>
-        </button>
-      </div>
-    </div>
-    <div class="content">
-      <div class="link">
-        <div class="content" routerLink="/home">
-          <div class="title">Candidates</div>
-        </div>
-      </div>
-      <div class="link">
-        <div class="content"  [routerLink]="['test']">
-          <div class="title">Jobs</div>
-        </div>
-      </div>
-      <div class="link">
-        <div class="content"  [routerLink]="['/dashboard']">
-          <div class="title">Skills</div>
-        </div>
-      </div>
-      <div class="link">
-        <div class="content"  [routerLink]="['/home']">
-          <div class="title">Logout</div>
-        </div>
-      </div>
-    </div>
-    <div class="footer"></div>
+      </button>
+    </div> -->
   </div>
+  <div class="content">
+    <div class="link">
+      <div class="content" [routerLink]="['user']">
+        <img src="assets/icons/navbar/home.svg" width="35px" alt="" srcset="">
+        <div class="title">Dashboard</div>
+      </div>
+    </div>
+    <div class="link">
+      <div class="content" [routerLink]="['user']">
+        <img src="assets/icons/navbar/user.svg" alt="" srcset="">
+        <div class="title">User</div>
+      </div>
+    </div>
+    <div class="link">
+      <div class="content" [routerLink]="['member']">
+        <img src="assets/icons/navbar/members.svg" alt="" srcset="">
+        <div class="title">Members</div>
+      </div>
+    </div>
+    <div class="link">
+      <div class="content" [routerLink]="['event']">
+        <img src="assets/icons/navbar/event.svg" alt="" srcset="">
+        <div class="title">Event</div>
+      </div>
+    </div>
+    <div class="link">
+      <div class="content" [routerLink]="['form']">
+        <img src="assets/icons/navbar/form.svg" alt="" srcset="">
+        <div class="title">Form</div>
+      </div>
+    </div>
+    <div class="link">
+      <div class="content" [routerLink]="['message']">
+        <img src="assets/icons/navbar/messages.svg" alt="" srcset="">
+        <div class="title">Message</div>
+      </div>
+    </div>
+    <div class="link">
+      <div class="content" [routerLink]="['mail']">
+        <img src="assets/icons/navbar/mail.svg" alt="" srcset="">
+        <div class="title">Mail</div>
+      </div>
+    </div>
+    <div class="link">
+      <div class="content" [routerLink]="['gallery']">
+        <img src="assets/icons/navbar/gallery.svg" alt="" srcset="">
+        <div class="title">Gallery</div>
+      </div>
+    </div>
+    <div class="link">
+      <div class="content" [routerLink]="['oci']">
+        <img src="assets/icons/navbar/oci.svg" alt="" srcset="">
+        <div class="title">OCI</div>
+      </div>
+    </div>
+    <div class="link">
+      <div class="content" [routerLink]="['social-media']">
+        <img src="assets/icons/navbar/social_media.svg" alt="" srcset="">
+        <div class="title">Social Media</div>
+      </div>
+    </div>
+    <div class="link">
+      <div class="content" [routerLink]="['logs']">
+        <img src="assets/icons/navbar/logs.svg" alt="" srcset="">
+        <div class="title">Logs</div>
+      </div>
+    </div>
+    <div class="link">
+      <div class="content" [routerLink]="['logout']">
+        <img src="assets/icons/navbar/logout.svg" alt="" srcset="">
+        <div class="title">Logout</div>
+      </div>
+    </div>
+  </div>
+  <div class="footer"></div>
+</div>
