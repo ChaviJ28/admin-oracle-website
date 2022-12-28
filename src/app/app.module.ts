@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { FormsComponent } from './modules/forms/forms.component';
 import { UserComponent } from './modules/user/user.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { UserComponent } from './modules/user/user.component';
     NgbModule,
     SharedModule,
     BrowserAnimationsModule,
+    MatSelectModule
   ],
   bootstrap: [AppComponent]
 })

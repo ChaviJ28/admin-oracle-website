@@ -2,6 +2,8 @@
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
+
 
 html,
 body {
@@ -10,7 +12,42 @@ body {
 
 body {
     margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-family: 'Lexend', sans-serif !important;
     background-color: #060C1A;
+    // background-color: #8eb0ff;
     color: #ffffff;
+}
+
+.search-block {
+    display: flex;
+
+    .search-field {
+        margin-right: 20px;
+
+        label {
+            margin-right: 10px;
+        }
+
+        input {
+            background-color: transparent;
+            border: solid #7F51BE 2px;
+            border-radius: 6px;
+            color: #ffffff;
+        }
+
+        select {
+            background-color: transparent;
+            border: solid #7F51BE 2px;
+            border-radius: 6px;
+            width: 200px;
+            height: 30px;
+            color: #ffffff;
+
+            option {
+                // background-color: transparent;
+                color: #ffffff;
+                background-color: #060C1A;
+            }
+        }
+    }
 }

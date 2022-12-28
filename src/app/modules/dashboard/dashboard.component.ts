@@ -65,7 +65,7 @@ export class DashboardComponent implements AfterViewInit {
     },
   ]
 
-  displayedColumns: string[] = ['id', 'name', 'address', 'age','actions'];
+  displayedColumns: string[] = ['id', 'name', 'address', 'age', 'actions'];
   dataSource: MatTableDataSource<Example>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -84,7 +84,7 @@ export class DashboardComponent implements AfterViewInit {
     this.dialog.open(NewExampleComponent, {
       width: '350px',
       enterAnimationDuration: '400ms',
-      exitAnimationDuration:'200ms',
+      exitAnimationDuration: '200ms',
     });
   }
 
