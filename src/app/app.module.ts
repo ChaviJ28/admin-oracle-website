@@ -11,12 +11,14 @@ import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { FormsComponent } from './modules/forms/forms.component';
 import { UserComponent } from './modules/user/user.component';
 import { MatSelectModule } from '@angular/material/select';
+import { LogComponent } from './modules/log/log.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormsComponent,
     UserComponent,
+    LogComponent,
   ],
   imports: [
     BrowserModule,
