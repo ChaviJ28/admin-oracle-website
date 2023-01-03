@@ -1,12 +1,35 @@
 table {
     width: 100%;
-  }
+}
+
   
   .mat-mdc-form-field {
     font-size: 14px;
     width: 100%;
   }
   
-  td, th {
+  th {
+    
     width: 25%;
+    background-color: #1C212D;
+    color: #FFFFFF;
   }
+  td {
+    color: #FFFFFF;
+    background-color: #383B4E;
+  }
+.admin{
+width: 103px;
+height: 16px;
+font-family: 'Lexend';
+font-style: normal;
+font-weight: 600;
+font-size: 32px;
+line-height: 16px;
+text-align: center;
+color: #FFFFFF;
+}
+
+.paginationMark{
+  background-color: #1C212D;
+}

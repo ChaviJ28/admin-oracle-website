@@ -16,7 +16,7 @@ export class DashboardComponent implements AfterViewInit {
   examples: Example[] = [
     {
       id: 1,
-      name: "tom",
+      name: "Kavish Mojhoa",
       address: "Mauritius",
       age: 20,
       gender: "Male"

@@ -1,7 +1,8 @@
 <div class="sidebar" [ngClass]="{ 'expanded': isExpanded }">
     <div class="header">
-      <h1 class="title"  >
-        Dashboard
+      <h1 class="title">
+        <img src=""/>
+        Oracle Club
       </h1>
       
       <div class="toggle" >
@@ -11,24 +12,73 @@
       </div>
     </div>
     <div class="content">
-      <div class="link">
-        <div class="content" routerLink="/home">
-          <div class="title">Candidates</div>
-        </div>
+      <div>
+        <img src=""/>
       </div>
       <div class="link">
-        <div class="content"  [routerLink]="['test']">
-          <div class="title">Jobs</div>
+        <div class="content" routerLink="/home">
+          <div class="title">User</div>
+          <mat-icon>account_circle</mat-icon>
         </div>
       </div>
       <div class="link">
         <div class="content"  [routerLink]="['/dashboard']">
-          <div class="title">Skills</div>
+          <div class="title">Users</div>
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"  class="white-icon"></mat-icon>
+        </div>
+      </div>
+      <div class="link">
+        <div class="content"  [routerLink]="['/dashboard']">
+          <div class="title">Calendar</div>
+          <mat-icon>calendar_today</mat-icon>
+          </div>
+      </div>
+      <div class="link">
+        <div class="content"  [routerLink]="['/dashboard']">
+          <div class="title">Slides</div>
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"  class="white-icon"></mat-icon>
+        </div>
+      </div>
+      <div class="link">
+        <div class="content"  [routerLink]="['/dashboard']">
+          <div class="title">Message</div>
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"  class="white-icon"></mat-icon>
+        </div>
+      </div>
+      <div class="link">
+        <div class="content"  [routerLink]="['/dashboard']">
+          <div class="title">Email</div>
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"  class="white-icon"></mat-icon>
+        </div>
+      </div>
+      <div class="link">
+        <div class="content"  [routerLink]="['/dashboard']">
+          <div class="title">Gallery</div>
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"  class="white-icon"></mat-icon>
+        </div>
+      </div>
+      <div class="link">
+        <div class="content"  [routerLink]="['/dashboard']">
+          <div class="title">OCI</div>
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"  class="white-icon"></mat-icon>
+        </div>
+      </div>
+      <div class="link">
+        <div class="content"  [routerLink]="['/dashboard']">
+          <div class="title">Social Media</div>
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"  class="white-icon"></mat-icon>
+        </div>
+      </div>
+      <div class="link">
+        <div class="content"  [routerLink]="['/dashboard']">
+          <div class="title">Log</div>
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"  class="white-icon"></mat-icon>
         </div>
       </div>
       <div class="link">
         <div class="content"  [routerLink]="['/home']">
           <div class="title">Logout</div>
+          <mat-icon>exit_to_app</mat-icon>
         </div>
       </div>
     </div>

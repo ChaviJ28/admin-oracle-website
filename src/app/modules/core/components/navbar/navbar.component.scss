@@ -16,6 +16,8 @@
   
     height: 100vh;
     transition: 0.3s;
+
+    //border-right-color: #ffffff ;
   
     width: 60px;
     &.expanded {
@@ -24,6 +26,8 @@
       .header {
         h1 {
           margin-left: 0px;
+          
+          color: #ffffff
         }
         .chevron {
           margin-left: 0px;
@@ -36,14 +40,15 @@
         .link {
           .content {
             .title {
-              max-width: 120px;
+              max-width: 100px;
+              color: #ffffff
             }
           }
         }
       }
     }
   
-    background: #f1f1f1;
+    background: #252a35;
     color: #b2b3b8;
   
     .header {
@@ -52,7 +57,7 @@
       justify-content: center;
       padding: 10px;
   
-      background: #f1f1f1;
+      background: #252a35;
   
       h1 {
         font-size: 20px;
