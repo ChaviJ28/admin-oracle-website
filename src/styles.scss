@@ -18,8 +18,13 @@ body {
     color: #ffffff;
 }
 
+table {
+    min-width: 1200px;
+}
+
 .search-block {
     display: flex;
+    margin-bottom: 25px;
 
     .search-field {
         margin-right: 20px;
@@ -59,4 +64,14 @@ body {
         right: 0;
         margin-right: 70px;
     }
+}
+
+
+.center-row {
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+
+.mat-sort-header-container {
+    justify-content: center !important;
 }

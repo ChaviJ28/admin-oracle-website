@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { Log } from '../core/models/log.model';
+import { MatPaginator } from '@angular/material/paginator';
 import { LogService } from './log.service';
 
 @Component({
@@ -13,11 +13,12 @@ export class LogComponent implements OnInit {
   displayedColumns: string[] = ['id', 'title', 'description', 'user_id', 'severity'];
   severityOptions: { text: string; value: string; }[];
   dataSource: MatTableDataSource<never>;
-
-
+  @ViewChild(MatPaginator)
+  paginator!: MatPaginator;
 
   constructor(private api: LogService) {
-    this.dataSource = new MatTableDataSource([]);
+    this.dataSource = new MatTableDataSource<never>;
+    this.dataSource.paginator = this.paginator;
     this.severityOptions = [{ text: "Log", value: "log" }, { text: "Warning", value: "warning" }, { text: "Error", value: "error" }];
 
   }
@@ -32,14 +33,28 @@ export class LogComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.api.listLogResponse().subscribe((resp) => {
+    this.api.listLogResponse({}).subscribe((resp) => {
       console.log(resp);
       this.dataSource = resp['data'];
     })
   }
 
-  search(): void {
+  search(userId: string, severity: string): void {
+    var searchCriteria: any = {};
 
+    if (userId) {
+      searchCriteria.user_id = userId;
+    }
+
+    if (severity) {
+      searchCriteria.severity = severity;
+    }
+    console.log("search:", searchCriteria);
+
+    this.api.listLogResponse(searchCriteria).subscribe((resp) => {
+      console.log(resp);
+      this.dataSource = resp['data'];
+    })
   }
 
 

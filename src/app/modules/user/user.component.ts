@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { UserService } from './user.service';
 import { NewExampleComponent } from '../dashboard/components/new-example/new-example.component';
 
 @Component({
@@ -19,14 +20,17 @@ export class UserComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
   activeOptions: { text: string; value: string; }[];
 
-  constructor(public dialog: MatDialog) {
+  constructor(public dialog: MatDialog, private api: UserService) {
     this.dataSource = new MatTableDataSource([]);
     this.activeOptions = [{ text: "Yes", value: "yes" }, { text: "No", value: "no" }];
 
   }
   ngOnInit(): void {
     // throw new Error('Method not implemented.');
-
+    this.api.listUserResponse().subscribe((resp) => {
+      console.log(resp);
+      this.dataSource = resp['data'];
+    })
   }
 
   ngAfterViewInit() {
@@ -34,8 +38,8 @@ export class UserComponent implements OnInit {
     this.dataSource.sort = this.sort;
   }
 
-  search():void {
-    
+  search(): void {
+
   }
 
   openDialog(): void {
