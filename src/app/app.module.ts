@@ -8,10 +8,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from './modules/shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
+import { FormsComponent } from './modules/forms/forms.component';
+import { UserComponent } from './modules/user/user.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
     AppComponent,
+    FormsComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
@@ -20,6 +25,7 @@ import { DashboardModule } from './modules/dashboard/dashboard.module';
     NgbModule,
     SharedModule,
     BrowserAnimationsModule,
+    MatSelectModule
   ],
   bootstrap: [AppComponent]
 })

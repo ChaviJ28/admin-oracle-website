@@ -4,11 +4,17 @@ import { TestComponent } from './modules/core/components/test/test.component';
 import { WeatherTestComponent } from './modules/core/components/weather-test/weather-test.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 
+import { FormsComponent } from './modules/forms/forms.component';
+import { UserComponent } from './modules/user/user.component';
+
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: WeatherTestComponent },
-  {path: 'test', component: TestComponent},
-  {path: 'dashboard', component: DashboardComponent}
+  { path: 'test', component: TestComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'form', component: FormsComponent },
+  { path: 'user', component: UserComponent },
+
 ];
 
 @NgModule({
