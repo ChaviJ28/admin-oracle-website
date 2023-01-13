@@ -8,37 +8,32 @@
 
     <div class=" mx-auto" style="max-width: 1200px;">
       <div style=" display: flex; justify-content: end;">
-        <button mat-raised-button (click)="openDialog()">Add<mat-icon>add</mat-icon></button>
+        <button mat-raised-button (click)="newUser()">
+          <mat-icon>add</mat-icon>
+        </button>
       </div>
       <section class="search-block">
-        <!-- <mat-form-field class="example-full-width">
-          <mat-label>Search</mat-label>
-          <input>
-        </mat-form-field> -->
+
         <div class="search-field">
-          <label for="search_email">Email: </label>
-          <input id="search_email" type="text" name="sEmail">
+          <label for="search_user_id">UserId: </label>
+          <input id="search_user_id" type="text" #sUserId>
         </div>
 
-        <!-- <span class="search-field">
-          <mat-form-field appearance="fill">
-            <mat-label>Select</mat-label>
-            <mat-select>
-              <mat-option *ngFor="let opt of activeOptions; let i = index" value="{{opt.value}}">{{opt.text}}</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </span> -->
+        <div class="search-field">
+          <label for="search_email">Email: </label>
+          <input id="search_email" type="text" #sEmail>
+        </div>
 
         <div class="search-field">
           <label for="search_active">Active: </label>
-          <select name="sActive" id="search_active">
+          <select #sActive id="search_active">
             <option value=""></option>
             <option *ngFor="let opt of activeOptions; let i = index" value="{{opt.value}}">{{opt.text}}</option>
           </select>
         </div>
 
         <div class="search-button">
-          <button mat-raised-button (click)="search()">
+          <button mat-raised-button (click)="search(sUserId.value, sEmail.value, sActive.value)">
             <mat-icon fontIcon="search"></mat-icon>
           </button>
         </div>
@@ -50,39 +45,53 @@
         </div> -->
       </section>
 
-
-      <!-- <mat-form-field>
-        <mat-label>Filter</mat-label>
-        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
-      </mat-form-field> -->
-
-      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-
-        <!--- Note that these columns can be defined in any order.
-              The actual rendered columns are set as a property on the row definition" -->
+      <table mat-table [dataSource]="dataSource" mat-sort class="mat-elevation-z8">
 
         <!-- Position Column -->
-        <ng-container matColumnDef="id">
-          <th mat-header-cell *matHeaderCellDef> No. </th>
-          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-        </ng-container>
+        <!-- <ng-container matColumnDef="userid">
+          <th   mat-header-cell *matHeaderCellDef> UserId </th>
+          <td mat-cell  *matCellDef="let element"> {{element.id}} </td>
+        </ng-container> -->
 
-        <!-- Name Column -->
-        <ng-container matColumnDef="full_name">
-          <th mat-header-cell *matHeaderCellDef> Full Name </th>
-          <td mat-cell *matCellDef="let element"> {{element.full_name}} </td>
-        </ng-container>
-
-        <!-- username Column -->
+        <!-- UserName Column -->
         <ng-container matColumnDef="username">
           <th mat-header-cell *matHeaderCellDef> Username </th>
           <td mat-cell *matCellDef="let element"> {{element.username}} </td>
         </ng-container>
 
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.full_name}} </td>
+        </ng-container>
+
+        <!-- Email Column -->
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef> Email </th>
+          <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        </ng-container>
+
+        <!-- username Column -->
+        <!-- <ng-container matColumnDef="username">
+          <th mat-header-cell *matHeaderCellDef> Username </th>
+          <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+        </ng-container> -->
+
         <!-- Active Column -->
         <ng-container matColumnDef="active">
           <th mat-header-cell *matHeaderCellDef> Active </th>
           <td mat-cell *matCellDef="let element"> {{element.active}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+          <td mat-cell *matCellDef="let row">
+            <button mat-icon-button (click)="viewUser()">
+              <img class="editBtn" src="assets/icons/table/edit.svg">
+            </button>
+
+          </td>
+          <td></td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -145,9 +154,9 @@
           <tr class="mat-row" *matNoDataRow>
             <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
           </tr>
-      </table>
+      </table> -->
 
-      <mat-paginator [pageSizeOptions]="[ 10, 20, 100]" aria-label="Select page of users"></mat-paginator> -->
+      <mat-paginator [pageSizeOptions]="[ 10, 20, 100]" aria-label="Select page of users"></mat-paginator>
     </div>
   </div>
 </div>

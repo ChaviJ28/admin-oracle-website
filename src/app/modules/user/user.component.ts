@@ -3,8 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { NewUserComponent } from './components/new-user/new-user.component';
 import { UserService } from './user.service';
-import { NewExampleComponent } from '../dashboard/components/new-example/new-example.component';
 
 @Component({
   selector: 'app-user',
@@ -13,7 +13,7 @@ import { NewExampleComponent } from '../dashboard/components/new-example/new-exa
 })
 export class UserComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'name', 'address', 'age', 'actions'];
+  displayedColumns: string[] = ['username', 'name', 'email', 'active', 'actions'];
   dataSource: MatTableDataSource<never>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -26,8 +26,7 @@ export class UserComponent implements OnInit {
 
   }
   ngOnInit(): void {
-    // throw new Error('Method not implemented.');
-    this.api.listUserResponse().subscribe((resp) => {
+    this.api.listUserResponse({}).subscribe((resp) => {
       console.log(resp);
       this.dataSource = resp['data'];
     })
@@ -38,25 +37,39 @@ export class UserComponent implements OnInit {
     this.dataSource.sort = this.sort;
   }
 
-  search(): void {
+  search(userId: string, email: string, active: string): void {
+    var searchCriteria: any = {};
+
+    if (userId) {
+      searchCriteria.id = userId;
+    }
+
+    if (email) {
+      searchCriteria.email = email;
+    }
+
+    if (active) {
+      searchCriteria.active = active;
+    }
+    console.log("search:", searchCriteria);
+
+    this.api.listUserResponse(searchCriteria).subscribe((resp) => {
+      console.log(resp);
+      this.dataSource = resp['data'];
+    })
+  }
+
+  viewUser(): void {
 
   }
 
-  openDialog(): void {
-    this.dialog.open(NewExampleComponent, {
-      width: '350px',
+  newUser(): void {
+    this.dialog.open(NewUserComponent, {
+      width: '1200px',
+      height: '400px',
       enterAnimationDuration: '400ms',
       exitAnimationDuration: '200ms',
     });
-  }
-
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
   }
 
 }

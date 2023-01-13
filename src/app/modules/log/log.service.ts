@@ -17,7 +17,10 @@ export class LogService {
                 user_token: "98764197289734652383730749",
             },
             data: {
-                search_criteria: searchCriteria
+                search_criteria: searchCriteria,
+                sort: [ 
+                    { createdAt: 'DESC' } 
+                ]
             }
         });
     }

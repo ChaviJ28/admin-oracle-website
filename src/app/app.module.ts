@@ -10,7 +10,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { FormsComponent } from './modules/forms/forms.component';
 import { UserComponent } from './modules/user/user.component';
+import { NewUserComponent } from './modules/user/components/new-user/new-user.component';
 import { MatSelectModule } from '@angular/material/select';
+import { MatChipsModule } from '@angular/material/chips'; 
 import { LogComponent } from './modules/log/log.component';
 
 @NgModule({
@@ -18,6 +20,7 @@ import { LogComponent } from './modules/log/log.component';
     AppComponent,
     FormsComponent,
     UserComponent,
+    NewUserComponent,
     LogComponent,
   ],
   imports: [
@@ -27,7 +30,8 @@ import { LogComponent } from './modules/log/log.component';
     NgbModule,
     SharedModule,
     BrowserAnimationsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatChipsModule
   ],
   bootstrap: [AppComponent]
 })

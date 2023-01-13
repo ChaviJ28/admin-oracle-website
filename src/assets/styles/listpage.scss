@@ -1,0 +1,136 @@
+.search-block {
+    display: flex;
+    margin-bottom: 25px;
+
+    .search-field {
+        margin-right: 20px;
+
+        label {
+            margin-right: 10px;
+        }
+
+        input {
+            background-color: transparent;
+            border: solid #7F51BE 2px;
+            border-radius: 6px;
+            color: #ffffff;
+            height: 100%;
+        }
+
+        select {
+            background-color: transparent;
+            border: solid #7F51BE 2px;
+            border-radius: 6px;
+            width: 200px;
+            height: 30px;
+            color: #ffffff;
+            height: 100%;
+
+
+            option {
+                // background-color: transparent;
+                color: #ffffff;
+                background-color: #060C1A;
+            }
+        }
+    }
+
+    .add-button-block {
+        position: absolute;
+        right: 0;
+        margin-right: 70px;
+    }
+}
+
+table {
+    min-width: 1200px;
+    background-color: #383b4e !important;
+
+    th,
+    td {
+        text-align: center !important;
+        vertical-align: middle !important;
+    }
+
+    .mat-cell,
+    .mat-footer-cell {
+        color: #ffffff;
+    }
+
+    .mat-header-cell {
+        color: #ffffff;
+        background-color: #505470 !important;
+    }
+
+    .editBtn {
+        margin-bottom: 7px;
+    }
+}
+
+.mat-table {
+    font-family: 'Lexend', sans-serif !important;
+}
+
+.mat-paginator {
+    background: #505470;
+    color: #ffffff !important;
+}
+
+.mat-select-value .mat-select-arrow {
+    color: #ffffff;
+}
+
+.mat-paginator-icon {
+    fill: #ffffff !important;
+}
+
+.mat-sort-header-container {
+    justify-content: center !important;
+}
+
+.new-block {
+    display: flex;
+    width: 90%;
+    text-align: center;
+
+    .new-field {
+        height: 40px;
+        margin-bottom: 30px;
+
+        label {
+            margin-right: 10px;
+            width: 100px;
+        }
+
+        input {
+            background-color: transparent;
+            border: solid #7F51BE 2px;
+            border-radius: 6px;
+            color: #ffffff;
+            height: 100%;
+            width: 300px;
+        }
+
+        select {
+            background-color: transparent;
+            border: solid #7F51BE 2px;
+            border-radius: 6px;
+            width: 300px;
+            height: 30px;
+            color: #ffffff;
+            height: 100%;
+
+
+            option {
+                // background-color: transparent;
+                color: #ffffff;
+                background-color: #060C1A;
+            }
+        }
+
+        .mat-chip.mat-standard-chip.mat-chip-selected.mat-primary {
+            background-color: #7F51BE;
+        }
+
+    }
+}

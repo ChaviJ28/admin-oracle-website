@@ -4,6 +4,7 @@
 @import '~bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
 
+@import 'assets/styles/listpage';
 
 html,
 body {
@@ -18,60 +19,7 @@ body {
     color: #ffffff;
 }
 
-table {
-    min-width: 1200px;
-}
-
-.search-block {
-    display: flex;
-    margin-bottom: 25px;
-
-    .search-field {
-        margin-right: 20px;
-
-        label {
-            margin-right: 10px;
-        }
-
-        input {
-            background-color: transparent;
-            border: solid #7F51BE 2px;
-            border-radius: 6px;
-            color: #ffffff;
-            height: 100%;
-        }
-
-        select {
-            background-color: transparent;
-            border: solid #7F51BE 2px;
-            border-radius: 6px;
-            width: 200px;
-            height: 30px;
-            color: #ffffff;
-            height: 100%;
-
-
-            option {
-                // background-color: transparent;
-                color: #ffffff;
-                background-color: #060C1A;
-            }
-        }
-    }
-
-    .add-button-block {
-        position: absolute;
-        right: 0;
-        margin-right: 70px;
-    }
-}
-
-
-.center-row {
-    text-align: center !important;
-    vertical-align: middle !important;
-}
-
-.mat-sort-header-container {
-    justify-content: center !important;
+.mat-dialog-container {
+    background: #1C212D;
+    color: #fff
 }

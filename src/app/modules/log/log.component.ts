@@ -49,7 +49,6 @@ export class LogComponent implements OnInit {
     if (severity) {
       searchCriteria.severity = severity;
     }
-    console.log("search:", searchCriteria);
 
     this.api.listLogResponse(searchCriteria).subscribe((resp) => {
       console.log(resp);
