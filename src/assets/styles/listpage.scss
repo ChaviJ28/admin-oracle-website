@@ -67,8 +67,9 @@ table {
     }
 }
 
-.mat-table {
-    font-family: 'Lexend', sans-serif !important;
+.mat-table,
+.mat-raised-button {
+    font-family: inherit;
 }
 
 .mat-paginator {
