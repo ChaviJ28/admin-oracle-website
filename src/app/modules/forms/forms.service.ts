@@ -14,7 +14,7 @@ export class FormService {
         return this.http.post<any>(environment.apiUrl + 'form/list', {
             auth: {
                 app_token: environment.appToken,
-                user_token: "98764197289734652383730749",
+                user_token: "regOGv2y5BEcS42NiygKQtE5uvu6uxKx1Lr31uKtKlJ35NI6qRrGZH633f2c1c8c3a465ab9e63defPuWd5Otkw3OU6qGNVTBSQ",
             },
             data: {
                 search_criteria: searchCriteria,
@@ -22,6 +22,16 @@ export class FormService {
                     created_by: created_by
                 }
             }
+        });
+    }
+
+    createForm(data: any): Observable<any> {
+        return this.http.post<any>(environment.apiUrl + 'form/create', {
+            auth: {
+                app_token: environment.appToken,
+                user_token: "regOGv2y5BEcS42NiygKQtE5uvu6uxKx1Lr31uKtKlJ35NI6qRrGZH633f2c1c8c3a465ab9e63defPuWd5Otkw3OU6qGNVTBSQ",
+            },
+            data: data
         });
     }
 }

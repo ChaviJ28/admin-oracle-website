@@ -1,0 +1,50 @@
+.new-form-page {
+    .new-form {
+        text-align: left;
+
+        .mat-expansion-panel:active {
+            .mat-expansion-panel {
+                border-left: 5px solid red;
+            }
+        }
+
+        .mat-expansion-panel {
+            margin: 0 auto;
+        }
+
+        .mat-form-field {
+            width: 95%;
+        }
+    }
+
+    .new-form-submit-btn {
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .new-form-details {
+        width: 88%;
+    }
+
+    .form-field-option {
+        height: 40px;
+        margin-bottom: 30px;
+
+        select {
+            background-color: transparent;
+            border: solid #7F51BE 2px;
+            border-radius: 6px;
+            width: 200px;
+            height: 30px;
+            color: #ffffff;
+            height: 100%;
+
+
+            option {
+                // background-color: transparent;
+                color: #ffffff;
+                background-color: #060C1A;
+            }
+        }
+    }
+}

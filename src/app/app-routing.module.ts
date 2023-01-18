@@ -7,6 +7,7 @@ import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { FormsComponent } from './modules/forms/forms.component';
 import { UserComponent } from './modules/user/user.component';
 import { LogComponent } from './modules/log/log.component';
+import { NewFormComponent } from './modules/forms/components/new-form/new-form.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'form', component: FormsComponent },
   { path: 'user', component: UserComponent },
   { path: 'log', component: LogComponent },
+  { path: 'new-form', component: NewFormComponent },
 
 ];
 

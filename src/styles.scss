@@ -19,6 +19,14 @@ body {
     color: #ffffff;
 }
 
+body * {
+    font-family: 'Lexend', sans-serif;
+
+    .material-icons {
+        font-family: 'Material Icons';
+    }
+}
+
 .mat-dialog-container {
     background: #1C212D;
     color: #fff

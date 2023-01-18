@@ -12,8 +12,16 @@ import { FormsComponent } from './modules/forms/forms.component';
 import { UserComponent } from './modules/user/user.component';
 import { NewUserComponent } from './modules/user/components/new-user/new-user.component';
 import { MatSelectModule } from '@angular/material/select';
-import { MatChipsModule } from '@angular/material/chips'; 
+import { MatChipsModule } from '@angular/material/chips';
 import { LogComponent } from './modules/log/log.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { NewFormComponent } from './modules/forms/components/new-form/new-form.component';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatCardModule } from '@angular/material/card';
+
 
 @NgModule({
   declarations: [
@@ -21,6 +29,7 @@ import { LogComponent } from './modules/log/log.component';
     FormsComponent,
     UserComponent,
     NewUserComponent,
+    NewFormComponent,
     LogComponent,
   ],
   imports: [
@@ -31,7 +40,13 @@ import { LogComponent } from './modules/log/log.component';
     SharedModule,
     BrowserAnimationsModule,
     MatSelectModule,
-    MatChipsModule
+    MatChipsModule,
+    MatFormFieldModule,
+    MatExpansionModule,
+    MatSlideToggleModule,
+    MatRadioModule,
+    MatCheckboxModule,
+    MatCardModule
   ],
   bootstrap: [AppComponent]
 })
