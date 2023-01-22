@@ -26,6 +26,8 @@ export class UserComponent implements OnInit {
 
   }
   ngOnInit(): void {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
     this.api.listUserResponse({}).subscribe((resp) => {
       console.log(resp);
       this.dataSource = resp['data'];
@@ -33,8 +35,8 @@ export class UserComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    // this.dataSource.paginator = this.paginator;
+    // this.dataSource.sort = this.sort;
   }
 
   search(userId: string, email: string, active: string): void {

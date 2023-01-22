@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { LogService } from './log.service';
+import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-log',
@@ -14,7 +15,8 @@ export class LogComponent implements OnInit {
   severityOptions: { text: string; value: string; }[];
   dataSource: MatTableDataSource<never>;
   @ViewChild(MatPaginator)
-  paginator!: MatPaginator;
+  paginator!: MatPaginator;  
+  @ViewChild(MatSort) sort!: MatSort;
 
   constructor(private api: LogService) {
     this.dataSource = new MatTableDataSource<never>;
@@ -33,6 +35,8 @@ export class LogComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
     this.api.listLogResponse({}).subscribe((resp) => {
       console.log(resp);
       this.dataSource = resp['data'];
