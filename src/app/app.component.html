@@ -1,6 +1,6 @@
 <app-spinner></app-spinner>
 <app-navbar [isExpanded]="sidebarExpanded" (toggleSidebar)="sidebarExpanded = !sidebarExpanded"></app-navbar>
-<div class="content pt-5" [ngClass]="{ 'sidebarExpanded': sidebarExpanded }">
+<div class="content" [ngClass]="{ 'sidebarExpanded': sidebarExpanded }">
   <div>
     <router-outlet></router-outlet>
   </div>

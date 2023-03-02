@@ -9,7 +9,7 @@ import { NewFormComponent } from './components/new-form/new-form.component';
 @Component({
   selector: 'app-forms',
   templateUrl: './forms.component.html',
-  styleUrls: ['./forms.component.css']
+  styleUrls: ['./forms.component.scss']
 })
 export class FormsComponent implements OnInit {
 
@@ -48,6 +48,14 @@ export class FormsComponent implements OnInit {
   }
 
   viewForm(): void {
+    throw new Error('Method not implemented.');
+  }
+
+  editForm(): void {
+    throw new Error('Method not implemented.');
+  }
+
+  openForm(): void {
     throw new Error('Method not implemented.');
   }
 

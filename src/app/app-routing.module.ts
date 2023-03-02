@@ -7,6 +7,7 @@ import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { FormsComponent } from './modules/forms/forms.component';
 import { UserComponent } from './modules/user/user.component';
 import { LogComponent } from './modules/log/log.component';
+import { MailComponent } from './modules/mail/mail.component';
 import { NewFormComponent } from './modules/forms/components/new-form/new-form.component';
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'user', component: UserComponent },
   { path: 'log', component: LogComponent },
   { path: 'new-form', component: NewFormComponent },
+  { path: 'mail', component: MailComponent },
 
 ];
 
