@@ -5,6 +5,8 @@ import { FormService } from './forms.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { NewFormComponent } from './components/new-form/new-form.component';
+import { environment } from '../../../environments/environment';
+
 
 @Component({
   selector: 'app-forms',
@@ -14,6 +16,7 @@ import { NewFormComponent } from './components/new-form/new-form.component';
 export class FormsComponent implements OnInit {
 
   displayedColumns: string[] = ['title', 'created_by', 'responses', 'url', 'end_date', 'status', 'actions'];
+  userToken: String = "regOGv2y5BEcS42NiygKQtE5uvu6uxKx1Lr31uKtKlJ35NI6qRrGZH633f2c1c8c3a465ab9e63defPuWd5Otkw3OU6qGNVTBSQ"
   dataSource: MatTableDataSource<never>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -55,8 +58,14 @@ export class FormsComponent implements OnInit {
     throw new Error('Method not implemented.');
   }
 
-  openForm(): void {
-    throw new Error('Method not implemented.');
+  openForm(form: any): void {
+    if (form.status == "active") {
+      window.open(environment.forms.url + form.custom_url, "_blank");
+    } else {
+      this.api.getClientIp().subscribe((resp) => {
+        window.open(environment.forms.url + form.custom_url + "?hash=" + this.userToken + "&ip=" + resp.ip, "_blank");
+      })
+    }
   }
 
   search(status: string): void {

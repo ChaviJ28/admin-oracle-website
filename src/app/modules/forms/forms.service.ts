@@ -34,4 +34,8 @@ export class FormService {
             data: data
         });
     }
+
+    getClientIp(): Observable<any> {
+        return this.http.get("http://api.ipify.org/?format=json");
+    }
 }
