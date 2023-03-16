@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { AngularEditorModule } from '@kolkov/angular-editor';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './modules/core/core.module';
@@ -16,11 +16,14 @@ import { MatChipsModule } from '@angular/material/chips';
 import { LogComponent } from './modules/log/log.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { NewFormComponent } from './modules/forms/components/new-form/new-form.component';
+import { MailComponent } from './modules/mail/mail.component';
+import { OciComponent } from './modules/oci/oci.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({
@@ -31,8 +34,11 @@ import { MatCardModule } from '@angular/material/card';
     NewUserComponent,
     NewFormComponent,
     LogComponent,
+    MailComponent,
+    OciComponent,
   ],
   imports: [
+    AngularEditorModule,
     BrowserModule,
     AppRoutingModule,
     CoreModule,
@@ -45,6 +51,7 @@ import { MatCardModule } from '@angular/material/card';
     MatExpansionModule,
     MatSlideToggleModule,
     MatRadioModule,
+    MatInputModule,
     MatCheckboxModule,
     MatCardModule
   ],
