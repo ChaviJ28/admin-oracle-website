@@ -11,7 +11,8 @@ export const environment = {
   },
   forms: {
     url: "http://localhost:4000/form/"
-  }
+  },
+  imageUploadSystemUrl: "http://localhost:6840/"
 };
 
 /*

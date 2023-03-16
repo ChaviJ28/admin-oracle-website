@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { AngularEditorModule } from '@kolkov/angular-editor';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './modules/core/core.module';
@@ -17,6 +17,7 @@ import { LogComponent } from './modules/log/log.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { NewFormComponent } from './modules/forms/components/new-form/new-form.component';
 import { MailComponent } from './modules/mail/mail.component';
+import { OciComponent } from './modules/oci/oci.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatRadioModule } from '@angular/material/radio';
@@ -34,8 +35,10 @@ import { MatInputModule } from '@angular/material/input';
     NewFormComponent,
     LogComponent,
     MailComponent,
+    OciComponent,
   ],
   imports: [
+    AngularEditorModule,
     BrowserModule,
     AppRoutingModule,
     CoreModule,

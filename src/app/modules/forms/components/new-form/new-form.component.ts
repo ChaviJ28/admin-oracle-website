@@ -5,6 +5,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { MatChip, MatChipsModule } from '@angular/material/chips';
 import { FormService } from '../../forms.component';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { AngularEditorConfig } from '@kolkov/angular-editor';
 
 @Component({
   selector: 'app-new-form',
@@ -14,11 +15,14 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 export class NewFormComponent implements OnInit {
 
   @Input() accessRights: any[] = [];
+  fileName = '';
   selectedChips: string[] = [];
   DetailsForm: any;
   formDetails: any = {
     title: "",
     end_date: "",
+    description: "",
+    banner: "",
     custom_url: "",
     status: "draft",
     form_fields: [],
@@ -41,7 +45,8 @@ export class NewFormComponent implements OnInit {
       this.DetailsForm = new FormGroup({
         formTitle: new FormControl(params['title']),
         formCustomUrl: new FormControl(params['url']),
-        formEndDate: new FormControl(params['end_date'])
+        formEndDate: new FormControl(params['end_date']),
+        formDescription: new FormControl("")
       });
     });
   }
@@ -52,6 +57,19 @@ export class NewFormComponent implements OnInit {
       this.selectedChips.push(chip.value);
     } else {
       this.selectedChips = this.selectedChips.filter(e => e !== chip.value);
+    }
+  }
+
+  onFileSelected(event: any) {
+    const file:File = event.target.files[0];
+    if (file) {
+      this.fileName = file.name;
+      const formData = new FormData();
+      formData.append("file", file);
+      this.api.uploadBanner(formData).subscribe((resp) => {
+        console.log(resp);
+        this.formDetails.banner = resp.data.folder + "/" + resp.data.file_name + "/" + resp.data.extension;
+      })
     }
   }
 
@@ -140,6 +158,7 @@ export class NewFormComponent implements OnInit {
     this.formDetails.title = this.DetailsForm.controls.formTitle.value;
     this.formDetails.end_date = this.DetailsForm.controls.formEndDate.value;
     this.formDetails.custom_url = this.DetailsForm.controls.formCustomUrl.value;
+    this.formDetails.description = this.DetailsForm.controls.formDescription.value;
 
     for (let control of this.RF.controls) {
       if ((control.value.type === "radio") || (control.value.type === "checkbox") || (control.value.type === "select")) {
@@ -167,11 +186,45 @@ export class NewFormComponent implements OnInit {
     }
     this.formDetails.form_fields = this.formFields
     console.log(this.formDetails);
-    // console.log(this.formFields);
     this.api.createForm(this.formDetails).subscribe((resp) => {
       console.log(resp);
     })
   }
+
+  editorConfig: AngularEditorConfig = {
+    editable: true,
+      spellcheck: true,
+      height: 'auto',
+      minHeight: '6rem',
+      maxHeight: 'auto',
+      width: 'auto',
+      minWidth: '0',
+      translate: 'yes',
+      enableToolbar: false,
+      showToolbar: false,
+      placeholder: 'Enter text here...',
+      defaultParagraphSeparator: 'p',
+      defaultFontName: '',
+      defaultFontSize: '',
+      fonts: [
+        {class: 'arial', name: 'Arial'},
+        {class: 'times-new-roman', name: 'Times New Roman'},
+        {class: 'calibri', name: 'Calibri'},
+        {class: 'comic-sans-ms', name: 'Comic Sans MS'},
+        {class: 'helvetica', name: 'helvetica'},
+        {class: 'roboto', name: 'roboto'},
+        {class: 'lexend', name: 'lexend'}
+      ],
+    toolbarPosition: 'top',
+    sanitize: true,
+    toolbarHiddenButtons: [
+      [
+        'insertImage',
+        'removeFormat',
+        'toggleEditorMode'
+      ]
+    ]    
+  };
 
 
 }

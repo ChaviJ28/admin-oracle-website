@@ -17,13 +17,28 @@
               <input matInput formControlName="formCustomUrl" value="{{this.formDetails.custom_url}}">
             </mat-form-field>
           </div>
-          <div class="col-6">
+          <div class="col-3">
             <mat-form-field appearance="outline" class="w-100">
               <mat-label>Form End Time:</mat-label>
               <input matInput type="date" formControlName="formEndDate" value="{{this.formDetails.end_date}}">
             </mat-form-field>
           </div>
+          <div class="col-3">
+            <!-- <mat-form-field appearance="outline" class="w-100">
+              <mat-label>banner:</mat-label>
+              <input matInput type="text" formControlName="formBanner">
+            </mat-form-field> -->
+            <input type="file"  accept="image/png, image/gif, image/jpeg" class="file-input" (change)="onFileSelected($event)" #fileUpload >
+            <div class="file-upload">
+              <button mat-mini-fab color="primary" class="upload-btn" (click)="fileUpload.click()">
+                <mat-icon>attach_file</mat-icon>
+              </button>
+              {{fileName || "No file uploaded yet."}}
+            </div>
+          </div>
         </div>
+        <mat-label>Description:</mat-label>
+        <angular-editor class="w-100" formControlName="formDescription" [config]="editorConfig"></angular-editor>
       </mat-card>
     </div>
 

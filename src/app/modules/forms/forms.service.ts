@@ -35,6 +35,10 @@ export class FormService {
         });
     }
 
+    uploadBanner(data: any): Observable<any> {
+        return this.http.post<any>(environment.imageUploadSystemUrl + 'upload/form-banner', data);
+    }
+
     getClientIp(): Observable<any> {
         return this.http.get("http://api.ipify.org/?format=json");
     }

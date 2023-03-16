@@ -44,7 +44,7 @@ export class FormsComponent implements OnInit {
   newForm(): void {
     this.dialog.open(NewFormComponent, {
       width: '1300px',
-      height: '800px',
+      height: '900px',
       enterAnimationDuration: '400ms',
       exitAnimationDuration: '200ms',
     });

@@ -1,4 +1,4 @@
-[{
+export const accounts = [{
     "id": 1,
     "user": "postmaster",
     "email": "postmaster@uomoracleclub.com",
