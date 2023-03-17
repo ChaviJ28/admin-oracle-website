@@ -3,7 +3,6 @@
     <div style="margin-bottom: 25px;">
       <h4 class="dialog-title">New User</h4>
     </div>
-
     <div class="row new-block">
       <div class="col-6 new-field">
         <label for="email">Email: </label>
@@ -17,25 +16,22 @@
         <label for="username">Username: </label>
         <input id="username" type="text" #nUsername>
       </div>
-      <div class="col-6 new-field">
+      <!-- <div class="col-6 new-field"> -->
         <!-- <p>Value: {{chipsControlValue$ | async}}</p> -->
-      </div>
+      <!-- </div> -->
       <div class="col-6 new-field">
-        <label class="mb-2">Role: </label>
+        <label style="display:contents;">Role: </label>
         <mat-chip-list #nRole selectable multiple aria-label="Access Rights Selection">
           <mat-chip #c="matChip" *ngFor="let option of accessRights" [value]="option.value" (click)="toggleSelection(c)">
             {{option.text}}
           </mat-chip>
         </mat-chip-list>
       </div>
-
     </div>
-
     <div style=" display: flex; justify-content: end;">
       <button mat-raised-button color="primary" (click)="newUser(nEmail.value, nName.value, nUsername.value)">
         Submit
       </button>
     </div>
-
   </div>
 </div>

@@ -14,14 +14,15 @@ import { UserService } from './user.service';
 export class UserComponent implements OnInit {
 
   displayedColumns: string[] = ['username', 'name', 'email', 'active', 'actions'];
-  dataSource: MatTableDataSource<never>;
+  dataSource: MatTableDataSource<never>
+  pagesSize = [2,4,6];
 
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatPaginator)  paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   activeOptions: { text: string; value: string; }[];
 
-  constructor(public dialog: MatDialog, private api: UserService) {
-    this.dataSource = new MatTableDataSource([]);
+  constructor(public dialog: MatDialog,private api: UserService) {
+    this.dataSource = new MatTableDataSource();
     this.activeOptions = [{ text: "Yes", value: "yes" }, { text: "No", value: "no" }];
 
   }
@@ -35,8 +36,8 @@ export class UserComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    // this.dataSource.paginator = this.paginator;
-    // this.dataSource.sort = this.sort;
+    this.dataSource = new MatTableDataSource()
+    this.dataSource.paginator = this.paginator;
   }
 
   search(userId: string, email: string, active: string): void {
@@ -67,11 +68,23 @@ export class UserComponent implements OnInit {
 
   newUser(): void {
     this.dialog.open(NewUserComponent, {
-      width: '1200px',
-      height: '400px',
+      width: '1050px',
+      height: '300px',
       enterAnimationDuration: '400ms',
       exitAnimationDuration: '200ms',
     });
   }
+
+  editUser(): void {
+    this.dialog.open(NewUserComponent, {
+      width: '1050px',
+      height: '300px',
+      enterAnimationDuration: '400ms',
+      exitAnimationDuration: '200ms',
+    });
+  }
+
+  registerSucess:boolean = false;
+
 
 }

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './modules/core/core.module';
@@ -14,6 +13,8 @@ import { NewUserComponent } from './modules/user/components/new-user/new-user.co
 import { MatSelectModule } from '@angular/material/select';
 import { MatChipsModule } from '@angular/material/chips'; 
 import { LogComponent } from './modules/log/log.component';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule, MatPaginator } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,9 @@ import { LogComponent } from './modules/log/log.component';
     SharedModule,
     BrowserAnimationsModule,
     MatSelectModule,
-    MatChipsModule
+    MatChipsModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   bootstrap: [AppComponent]
 })
